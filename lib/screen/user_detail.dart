@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:testavizh/dropdown.dart';
+import 'package:testavizh/widgets/genderIcon.dart';
 
-import 'screen/healthhomepage.dart';
+import 'healthhomepage.dart';
 
 class UserDetail extends StatefulWidget {
   const UserDetail({super.key});
@@ -50,39 +51,43 @@ class _UserDetailState extends State<UserDetail> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          const Text("Patients age:"),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width / 7),
-                          const Text("Gender:")
-                        ],
-                      ),
-                      const SizedBox(height: 20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          MyDropdown(
-                            options: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-                            width: 100,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Text("Patients age:"),
+                              const SizedBox(height: 10),
+                              MyDropdown(
+                                options: [
+                                  'Item 1',
+                                  'Item 2',
+                                  'Item 3',
+                                  'Item 4'
+                                ],
+                                width: 100,
+                              ),
+                            ],
                           ),
-                          //SizedBox(width: MediaQuery.of(context).size.width /6),
-                          const IconButton(
-                              onPressed: null,
-                              icon: Icon(
-                                Icons.male_rounded,
-                                color: Color.fromARGB(255, 255, 48, 92),
-                              )),
-                          const IconButton(
-                              onPressed: null,
-                              icon: Icon(
-                                Icons.female_rounded,
-                                color: Color.fromARGB(255, 255, 48, 92),
-                              )),
-                          const IconButton(
-                              onPressed: null,
-                              icon: Icon(
-                                Icons.circle_rounded,
-                                color: Color.fromARGB(255, 255, 48, 92),
-                              )),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Text("Gender:"),
+                              const SizedBox(height: 10),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Gendericon(
+                                      gendericon: "assets/mdi_face-male.png"),
+                                  const SizedBox(width: 8),
+                                  Gendericon(
+                                      gendericon: "assets/mdi_face-female.png"),
+                                  const SizedBox(width: 8),
+                                  Gendericon(
+                                      gendericon: "assets/Ellipse 666.png"),
+                                ],
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                       const Text("Location:"),
@@ -98,7 +103,7 @@ class _UserDetailState extends State<UserDetail> {
                             borderRadius: BorderRadius.circular(10.0),
                             borderSide: BorderSide.none,
                           ),
-                          suffixIcon: Icon(
+                          suffixIcon: const Icon(
                             Icons.location_on,
                             color: Color.fromARGB(255, 255, 48, 92),
                           ),

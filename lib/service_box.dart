@@ -5,30 +5,25 @@ class Features extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CardF(text: "Feature"),
-              CardF(text: "Feature"),
-              CardF(text: "Feature")
-            ],
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CardF(text: "General Care", image: "assets/s1.png"),
+            CardF(text: "Covid Care", image: "assets/s2.png"),
+            CardF(text: "Elder Care", image: "assets/s3.png")
+          ],
         ),
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CardF(text: "Feature"),
-              CardF(text: "Feature"),
-              CardF(text: "Feature")
-            ],
-          ),
+        const SizedBox(height: 15),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CardF(text: "ICU at HOME", image: "assets/s4.png"),
+            CardF(text: "Vaccination", image: "assets/s5.png"),
+            CardF(text: "Diagnosis", image: "assets/s6.png")
+          ],
         )
       ],
     );
@@ -37,38 +32,58 @@ class Features extends StatelessWidget {
 
 class CardF extends StatelessWidget {
   final String text;
+  String image;
 
-  const CardF({Key? key, required this.text}) : super(key: key);
+  CardF({Key? key, required this.text, required this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: Container(
-        width: MediaQuery.of(context).size.width / 5,
-        // height: MediaQuery.of(context).size.height / 7,
-        color: Colors.red,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Icon(
-                Icons.image,
-                size: 50,
-                color: Color.fromARGB(255, 74, 123, 166),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                text,
-                style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
-            ],
+    return Container(
+      width: MediaQuery.of(context).size.width / 4,
+      height: MediaQuery.of(context).size.height / 7,
+      margin: const EdgeInsets.symmetric(
+        horizontal: 1,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(11.0),
+                      image: DecorationImage(
+                        image: AssetImage(image),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Column(
+                        mainAxisAlignment:
+                            MainAxisAlignment.end, // Align text at the bottom
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            text,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 255, 48, 92),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

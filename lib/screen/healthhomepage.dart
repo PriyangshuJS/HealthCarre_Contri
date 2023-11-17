@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testavizh/doc_card.dart';
 import 'package:testavizh/service_box.dart';
+import 'package:testavizh/widgets/searchbar.dart';
 import 'package:testavizh/widgets/viewAll.dart';
 
 import '../option_box.dart';
@@ -52,15 +53,16 @@ class HomeHealthcarePage extends StatelessWidget {
               const SizedBox(height: 20),
               ViewAll(title: "Services we offer"),
               const Features(),
-              const SizedBox(height: 20),
-              const SearchBar(
-                padding: MaterialStatePropertyAll<EdgeInsets>(
-                  EdgeInsets.symmetric(horizontal: 16.0),
-                ),
-                onTap: null,
-                leading: Icon(Icons.search),
-                hintText: "Search for staff..",
-              ),
+              const SizedBox(height: 25),
+              CustomSearchBar(),
+              // const SearchBar(
+              //   padding: MaterialStatePropertyAll<EdgeInsets>(
+              //     EdgeInsets.symmetric(horizontal: 16.0),
+              //   ),
+              //   onTap: null,
+              //   leading: Icon(Icons.search),
+              //   hintText: "Search for staff..",
+              // ),
               const SizedBox(height: 20),
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),

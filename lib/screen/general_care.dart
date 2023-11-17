@@ -12,7 +12,7 @@ class GeneralCare extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height / 6),
+            SizedBox(height: MediaQuery.of(context).size.height / 10),
             Container(
               width: MediaQuery.of(context).size.width * 4.5 / 5,
               height: MediaQuery.of(context).size.height / 5,
