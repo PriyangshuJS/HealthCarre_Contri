@@ -8,6 +8,8 @@ class OptionBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width / 4,
+      height: MediaQuery.of(context).size.width / 7,
       decoration: BoxDecoration(
         border: Border.all(color: const Color.fromARGB(255, 255, 48, 92)),
         borderRadius: BorderRadius.circular(7),
@@ -25,7 +27,7 @@ class OptionBox extends StatelessWidget {
         child: Center(
           child: Text(
             optionText,
-            style: TextStyle(color: const Color.fromARGB(255, 255, 48, 92)),
+            style: const TextStyle(color: Color.fromARGB(255, 255, 48, 92)),
           ),
         ),
       ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:testavizh/doc_card.dart';
 import 'package:testavizh/service_box.dart';
+import 'package:testavizh/widgets/viewAll.dart';
 
-import 'option_box.dart';
+import '../option_box.dart';
 
 class HomeHealthcarePage extends StatelessWidget {
   @override
@@ -48,22 +50,7 @@ class HomeHealthcarePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("Services we offer"),
-                  TextButton(
-                      onPressed: null,
-                      child: Text(
-                        "View all",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          decorationColor: Color.fromARGB(255, 255, 48, 92),
-                          color: Color.fromARGB(255, 255, 48, 92),
-                        ),
-                      )),
-                ],
-              ),
+              ViewAll(title: "Services we offer"),
               const Features(),
               const SizedBox(height: 20),
               const SearchBar(
@@ -75,27 +62,18 @@ class HomeHealthcarePage extends StatelessWidget {
                 hintText: "Search for staff..",
               ),
               const SizedBox(height: 20),
-              Container(
-                color: Colors.amberAccent,
-                height: MediaQuery.of(context).size.height / 6,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  height: MediaQuery.of(context).size.height / 6,
+                  child: Image.asset(
+                    'assets/img3.png',
+                    fit: BoxFit.fill,
+                  ),
+                ),
               ),
               const SizedBox(height: 20),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("Staff near you"),
-                  TextButton(
-                      onPressed: null,
-                      child: Text(
-                        "View all",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          decorationColor: Color.fromARGB(255, 255, 48, 92),
-                          color: Color.fromARGB(255, 255, 48, 92),
-                        ),
-                      )),
-                ],
-              ),
+              ViewAll(title: "Staff near you"),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 7,
                 child: ListView.builder(
@@ -106,30 +84,15 @@ class HomeHealthcarePage extends StatelessWidget {
                       margin: const EdgeInsets.all(8.0),
                       width: 100.0,
                       color: Colors.blue,
-                      child: Center(
-                        child: Text('Item $index'),
+                      child: const Center(
+                        child: Text("Doc"),
                       ),
                     );
                   },
                 ),
               ),
               const SizedBox(height: 20),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("Trending Articles"),
-                  TextButton(
-                      onPressed: null,
-                      child: Text(
-                        "View all",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          decorationColor: Color.fromARGB(255, 255, 48, 92),
-                          color: Color.fromARGB(255, 255, 48, 92),
-                        ),
-                      )),
-                ],
-              ),
+              ViewAll(title: "Trending Articles"),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 7,
                 child: ListView.builder(

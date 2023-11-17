@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testavizh/dropdown.dart';
 
-import 'healthhomepage.dart';
+import 'screen/healthhomepage.dart';
 
 class UserDetail extends StatefulWidget {
   const UserDetail({super.key});
@@ -92,7 +92,7 @@ class _UserDetailState extends State<UserDetail> {
                           filled: true,
                           hintText: 'Address..',
                           hintStyle:
-                              TextStyle(color: Colors.white.withOpacity(0.7)),
+                              TextStyle(color: Colors.red.withOpacity(0.7)),
                           contentPadding: EdgeInsets.all(16.0),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10.0),

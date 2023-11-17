@@ -1,49 +1,44 @@
 import 'package:flutter/material.dart';
 
 class Features extends StatelessWidget {
-  const Features({Key? key}) : super(key: key);
+  const Features({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Container(
-          width: MediaQuery.of(context).size.width * 3 / 4,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Column(
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  featureC(text: "Feature"),
-                  featureC(text: "Feature"),
-                  featureC(text: "Feature"),
-                ],
-              ),
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  featureC(text: "Feature"),
-                  featureC(text: "Feature"),
-                  featureC(text: "Feature"),
-                ],
-              ),
+              CardF(text: "Feature"),
+              CardF(text: "Feature"),
+              CardF(text: "Feature")
             ],
           ),
         ),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CardF(text: "Feature"),
+              CardF(text: "Feature"),
+              CardF(text: "Feature")
+            ],
+          ),
+        )
       ],
     );
   }
 }
 
-class featureC extends StatelessWidget {
+class CardF extends StatelessWidget {
   final String text;
 
-  const featureC({Key? key, required this.text}) : super(key: key);
+  const CardF({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +54,7 @@ class featureC extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const Icon(
-                Icons.star,
+                Icons.image,
                 size: 50,
                 color: Color.fromARGB(255, 74, 123, 166),
               ),
