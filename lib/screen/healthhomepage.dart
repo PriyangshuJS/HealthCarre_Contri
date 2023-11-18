@@ -65,20 +65,37 @@ class HomeHealthcarePage extends StatelessWidget {
               //   hintText: "Search for staff..",
               // ),
               const SizedBox(height: 20),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  height: MediaQuery.of(context).size.height / 6,
-                  child: Image.asset(
-                    'assets/img3.png',
-                    fit: BoxFit.fill,
+              Container(
+                height: MediaQuery.of(context).size.height / 6,
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
+                  shadows: [
+                    BoxShadow(
+                      color: Color(0x19000000),
+                      blurRadius: 8,
+                      offset: Offset(4, 4),
+                      spreadRadius: 0,
+                    ),
+                    BoxShadow(
+                      color: Color(0x19000000),
+                      blurRadius: 2,
+                      offset: Offset(-1, -1),
+                      spreadRadius: 0,
+                    )
+                  ],
+                ),
+                child: Image.asset(
+                  'assets/img3.png',
+                  fit: BoxFit.fill,
                 ),
               ),
               const SizedBox(height: 20),
               ViewAll(title: "Staff near you"),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 4,
+                height: MediaQuery.of(context).size.height / 5,
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,

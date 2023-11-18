@@ -8,8 +8,8 @@ class OptionBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width / 4,
-      height: MediaQuery.of(context).size.width / 7,
+      width: MediaQuery.of(context).size.width / 3.7,
+      height: MediaQuery.of(context).size.width / 10,
       decoration: BoxDecoration(
         border: Border.all(color: const Color.fromARGB(255, 255, 48, 92)),
         borderRadius: BorderRadius.circular(7),

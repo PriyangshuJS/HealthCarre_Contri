@@ -6,7 +6,7 @@ class CustomSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 4 / 5,
+      width: MediaQuery.of(context).size.width * 3.5 / 5,
       height: MediaQuery.of(context).size.height / 15,
       decoration: ShapeDecoration(
         color: Colors.white,

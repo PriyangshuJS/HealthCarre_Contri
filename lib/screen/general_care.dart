@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/option_box.dart';
+import 'package:testavizh/widgets/conformButton.dart';
+import 'package:testavizh/widgets/option_box.dart';
 
 class GeneralCare extends StatelessWidget {
   const GeneralCare({Key? key}) : super(key: key);
@@ -178,28 +179,7 @@ class GeneralCare extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Handle the assessment button click
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFF83D5B),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                shadowColor: const Color(0x9C878787),
-                elevation: 5,
-              ),
-              child: const Text(
-                'Take assessment',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
+            ConformButton(conformText: 'Take assessment'),
             const SizedBox(height: 40),
           ],
         ),

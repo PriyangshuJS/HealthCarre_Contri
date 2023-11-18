@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/dropdown.dart';
+import 'package:testavizh/widgets/conformButton.dart';
+import 'package:testavizh/widgets/dropdown.dart';
 import 'package:testavizh/widgets/genderIcon.dart';
 
 import 'healthhomepage.dart';
@@ -110,33 +111,7 @@ class _UserDetailState extends State<UserDetail> {
                         ),
                       ),
                       const SizedBox(height: 50),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeHealthcarePage()),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color.fromARGB(255, 255, 48, 92),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          minimumSize: Size(
-                            MediaQuery.of(context).size.width - 32,
-                            MediaQuery.of(context).size.height / 15,
-                          ),
-                        ),
-                        child: const Text(
-                          'Next',
-                          style: TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      )
+                      ConformButton(conformText: "Next")
                     ],
                   ),
                 ),
