@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/doc_card.dart';
-import 'package:testavizh/service_box.dart';
+import 'package:testavizh/widgets/doc_card.dart';
+import 'package:testavizh/widgets/service_box.dart';
+import 'package:testavizh/widgets/articlebox.dart';
 import 'package:testavizh/widgets/searchbar.dart';
 import 'package:testavizh/widgets/viewAll.dart';
 
-import '../option_box.dart';
+import '../widgets/option_box.dart';
 
 class HomeHealthcarePage extends StatelessWidget {
   @override
@@ -77,18 +78,14 @@ class HomeHealthcarePage extends StatelessWidget {
               const SizedBox(height: 20),
               ViewAll(title: "Staff near you"),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 7,
+                height: MediaQuery.of(context).size.height / 4,
+                width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 20,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      margin: const EdgeInsets.all(8.0),
-                      width: 100.0,
-                      color: Colors.blue,
-                      child: const Center(
-                        child: Text("Doc"),
-                      ),
+                    return const Center(
+                      child: DocCard(),
                     );
                   },
                 ),
@@ -96,19 +93,12 @@ class HomeHealthcarePage extends StatelessWidget {
               const SizedBox(height: 20),
               ViewAll(title: "Trending Articles"),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 7,
+                height: MediaQuery.of(context).size.height / 4,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 20,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      margin: const EdgeInsets.all(8.0),
-                      width: 100.0,
-                      color: Colors.blue,
-                      child: Center(
-                        child: Text('Item $index'),
-                      ),
-                    );
+                    return ArticleCard();
                   },
                 ),
               )
