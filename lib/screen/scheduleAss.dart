@@ -54,25 +54,7 @@ class _ScheduleAState extends State<ScheduleA> {
               ),
             ),
             SizedBox(height: 10),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 5,
-              decoration: ShapeDecoration(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                shadows: [
-                  BoxShadow(
-                    color: Color(0x19000000),
-                    blurRadius: 4,
-                    offset: Offset(2, 2),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Calender(),
-            ),
+            Calender(),
             SizedBox(height: 20),
             Opacity(
               opacity: 0.50,
