@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ServiceCard extends StatelessWidget {
-  const ServiceCard({super.key});
+class StaffCard extends StatelessWidget {
+  const StaffCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,20 +18,7 @@ class ServiceCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                height: MediaQuery.of(context).size.height / 15,
-                width: MediaQuery.of(context).size.width / 6,
-                // height: 64,
-                decoration: ShapeDecoration(
-                  image: const DecorationImage(
-                    image: NetworkImage(
-                        "https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
-                    fit: BoxFit.fill,
-                  ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5)),
-                ),
-              ),
+              CircleAvatar(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -61,7 +48,7 @@ class ServiceCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

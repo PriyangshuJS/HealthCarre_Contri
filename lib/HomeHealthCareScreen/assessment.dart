@@ -27,7 +27,8 @@ class Assessment extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(30),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 'Book Appointment for long term',
@@ -40,7 +41,7 @@ class Assessment extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Text(
                 'Select Time period:',
                 textAlign: TextAlign.center,
@@ -52,7 +53,7 @@ class Assessment extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -60,7 +61,7 @@ class Assessment extends StatelessWidget {
                   OptionBox("24 Hours"),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Text(
                 'Shift:',
                 style: TextStyle(
@@ -71,7 +72,7 @@ class Assessment extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -91,7 +92,7 @@ class Assessment extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Text(
                 'General Care - Specific Services',
                 style: TextStyle(
@@ -102,7 +103,7 @@ class Assessment extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 20),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -113,7 +114,7 @@ class Assessment extends StatelessWidget {
                       OptionBox("Hygiene"),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -121,7 +122,7 @@ class Assessment extends StatelessWidget {
                       OptionBox("Medicines"),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -129,7 +130,7 @@ class Assessment extends StatelessWidget {
                       OptionBox("Cleaning"),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -138,7 +139,7 @@ class Assessment extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Text(
                 'Do you want additional services? Please mention below: ',
                 textAlign: TextAlign.center,
@@ -150,7 +151,7 @@ class Assessment extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Container(
                 width: 354,
                 height: 63,
@@ -178,7 +179,7 @@ class Assessment extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Text(
                 'Prefered Staff: ',
                 textAlign: TextAlign.center,
@@ -190,7 +191,7 @@ class Assessment extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -201,7 +202,7 @@ class Assessment extends StatelessWidget {
                   Gendericon(gendericon: "assets/Ellipse 666.png"),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Text(
                 'Any infectious disease? Please mention in detail',
                 textAlign: TextAlign.center,
@@ -213,7 +214,7 @@ class Assessment extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Container(
                 width: 354,
                 height: 63,
@@ -241,7 +242,7 @@ class Assessment extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Text(
                 'Duration of service:',
                 style: TextStyle(
@@ -252,7 +253,7 @@ class Assessment extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -313,7 +314,7 @@ class Assessment extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 20),
               Text(
                 'Active mobile number:',
                 style: TextStyle(
@@ -324,7 +325,7 @@ class Assessment extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 20),
               Container(
                 width: 354,
                 height: 40,
@@ -336,11 +337,11 @@ class Assessment extends StatelessWidget {
                 ),
                 child: TextFormField(),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               ConformButton(
                 conformText: "Schedule assessment",
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 20),
               GestureDetector(
                 onTap: null,
                 child: const Text(

@@ -37,6 +37,7 @@ class _ScheduleAState extends State<ScheduleA> {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20),
             Opacity(
@@ -53,9 +54,9 @@ class _ScheduleAState extends State<ScheduleA> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 20),
             Calender(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Opacity(
               opacity: 0.50,
               child: Text(

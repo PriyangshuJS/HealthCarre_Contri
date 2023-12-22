@@ -5,12 +5,13 @@ class paymentCard extends StatelessWidget {
   var price;
   var duration;
   var time;
-  paymentCard(
-      {super.key,
-      required this.service,
-      required this.price,
-      required this.duration,
-      required this.time});
+  paymentCard({
+    super.key,
+    required this.service,
+    required this.price,
+    required this.duration,
+    required this.time,
+  });
 
   @override
   Widget build(BuildContext context) {

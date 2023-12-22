@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testavizh/widgets/doc_card.dart';
+import 'package:testavizh/widgets/managerCard.dart';
 
 class UserAccDetail extends StatelessWidget {
   const UserAccDetail({super.key});
@@ -14,16 +15,7 @@ class UserAccDetail extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: 354,
-              height: 107,
-              decoration: ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(width: 1, color: Color(0xFFF83D5B)),
-                  borderRadius: BorderRadius.circular(25),
-                ),
-              ),
-            ),
+            ManagerCard(),
             const SizedBox(height: 20),
             Text(
               'OTP:\t\t\t....',
@@ -105,7 +97,7 @@ class UserAccDetail extends StatelessWidget {
 
   Widget buildUserRow(String label, String username) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Text('$label:'),
         Spacer(),

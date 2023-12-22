@@ -11,15 +11,16 @@ class GeneralCare extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(30),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: MediaQuery.of(context).size.height / 10),
             Container(
               width: MediaQuery.of(context).size.width * 4.5 / 5,
-              height: MediaQuery.of(context).size.height / 5,
+              height: MediaQuery.of(context).size.height / 4,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                color: Colors.amber,
+                color: Colors.white,
               ),
               child: Image.asset(
                 'assets/generalCare1.png',
@@ -197,7 +198,7 @@ class GeneralCare extends StatelessWidget {
             height: 60,
             decoration: const BoxDecoration(
               color: Color(0xFFF83D5B),
-              shape: BoxShape.circle, // Use BoxShape.circle for circular shape
+              shape: BoxShape.circle,
             ),
           ),
           const SizedBox(height: 8),
