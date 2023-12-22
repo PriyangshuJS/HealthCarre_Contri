@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:testavizh/HomeHealthCareScreen/user_detail.dart';
 import 'package:testavizh/HomeHealthCareScreen/user_health.dart';
+import 'package:testavizh/PhysiotheraphyScreen/Activity8.dart';
+import 'package:testavizh/PhysiotheraphyScreen/BookAppointment7.dart';
+import 'package:testavizh/PhysiotheraphyScreen/OrthoPhysio9.dart';
 import 'package:testavizh/PhysiotheraphyScreen/TakeAssessment5.dart';
 import 'package:testavizh/PhysiotheraphyScreen/packages3.dart';
 
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: TakeAssessment5(),
+      home: OrthoPhysio(),
     );
   }
 }
