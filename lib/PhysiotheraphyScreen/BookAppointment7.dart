@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/widgets/conformButton.dart';
-import 'package:testavizh/widgets/option_box.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../widgets/conformButton.dart';
 import '../widgets/paymentCard.dart';
 import '../widgets/serviceCard.dart';
 
-class Payment7 extends StatelessWidget {
+class Payment7 extends StatefulWidget {
   const Payment7({super.key});
 
+  @override
+  State<Payment7> createState() => _Payment7State();
+}
+
+class _Payment7State extends State<Payment7> {
+  final CollectionReference _packCollection =
+      FirebaseFirestore.instance.collection('packages');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +37,7 @@ class Payment7 extends StatelessWidget {
           padding: const EdgeInsets.all(30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Available doctors:',
@@ -40,7 +49,28 @@ class Payment7 extends StatelessWidget {
                   height: 0,
                 ),
               ),
-              ServiceCard(),
+              StreamBuilder<QuerySnapshot>(
+                stream: _packCollection.snapshots(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator();
+                  }
+
+                  if (snapshot.hasError) {
+                    return Text('Error: ${snapshot.error}');
+                  }
+
+                  if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                    return Text('No data available');
+                  }
+                  final data =
+                      snapshot.data!.docs.first.data() as Map<String, dynamic>;
+
+                  return ServiceCard(
+                    data: data,
+                  );
+                },
+              ),
               SizedBox(height: 20),
               Container(
                 width: MediaQuery.of(context).size.width,
@@ -60,6 +90,7 @@ class Payment7 extends StatelessWidget {
                     time: 12,
                     price: 500),
               ),
+              SizedBox(height: 20),
               Text(
                 'Payment option:',
                 style: TextStyle(
@@ -70,6 +101,7 @@ class Payment7 extends StatelessWidget {
                   height: 0,
                 ),
               ),
+              SizedBox(height: 20),
               ConformButton(conformText: "Pay now")
             ],
           ),

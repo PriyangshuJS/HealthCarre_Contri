@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/widgets/reviewCard.dart';
-import 'package:testavizh/widgets/viewAll.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../widgets/conformButton.dart';
+import '../widgets/reviewCard.dart';
+import '../widgets/viewAll.dart';
 
-class Packages4 extends StatelessWidget {
+class Packages4 extends StatefulWidget {
   const Packages4({Key? key}) : super(key: key);
 
   @override
+  State<Packages4> createState() => _Packages4State();
+}
+
+class _Packages4State extends State<Packages4> {
+  final CollectionReference _packCollection =
+      FirebaseFirestore.instance.collection('review');
+  @override
   Widget build(BuildContext context) {
-    Map<String, dynamic> randomData = generateRandomData();
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -31,12 +37,9 @@ class Packages4 extends StatelessWidget {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 129,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage("https://via.placeholder.com/354x129"),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.circular(25),
+                child: Image.asset(
+                  'assets/img9.png',
+                  fit: BoxFit.fill,
                 ),
               ),
               SizedBox(height: 10),
@@ -65,7 +68,28 @@ class Packages4 extends StatelessWidget {
               SizedBox(height: 10),
               MyList(days: 5),
               ViewAll(title: "Reviews"),
-              ReviewCard(data: randomData),
+              StreamBuilder<QuerySnapshot>(
+                stream: _packCollection.snapshots(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator();
+                  }
+
+                  if (snapshot.hasError) {
+                    return Text('Error: ${snapshot.error}');
+                  }
+
+                  if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                    return Text('No data available');
+                  }
+                  final data =
+                      snapshot.data!.docs.first.data() as Map<String, dynamic>;
+
+                  return ReviewCard(
+                    data: data,
+                  );
+                },
+              ),
               const Text(
                 'View All',
                 textAlign: TextAlign.center,
@@ -114,13 +138,6 @@ class MyList extends StatelessWidget {
       },
     );
   }
-}
-
-Map<String, dynamic> generateRandomData() {
-  return {
-    "cname": "user",
-    "comment": "fdshfuefhdjfdjvbdbvj",
-  };
 }
 
 class MyListItem extends StatelessWidget {

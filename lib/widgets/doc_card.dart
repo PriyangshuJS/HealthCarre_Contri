@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DocCard extends StatelessWidget {
-  const DocCard({Key? key}) : super(key: key);
+  final Map<String, dynamic> data;
+  DocCard({
+    super.key,
+    required this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
