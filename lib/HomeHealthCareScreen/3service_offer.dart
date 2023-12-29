@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/widgets/serviceCard.dart';
-import 'package:testavizh/widgets/viewAll.dart';
+import 'package:testavizh/widget/serviceCard.dart';
+import 'package:testavizh/widget/viewAll.dart';
 
-import '../widgets/searchbar.dart';
+import '../widget/searchbar.dart';
 
 class ServiceOffer extends StatelessWidget {
   const ServiceOffer({super.key});
@@ -27,19 +27,21 @@ class ServiceOffer extends StatelessWidget {
         padding: const EdgeInsets.all(30),
         child: SingleChildScrollView(
           child: Column(children: [
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              CustomSearchBar(),
-              IconButton(
-                onPressed: null,
-                icon: IconButton(
-                  onPressed: null,
-                  icon: Icon(
-                    Icons.filter_list,
-                    color: Color(0xB2F83D5B),
-                  ),
-                ),
-              )
-            ]),
+            const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomSearchBar(),
+                  IconButton(
+                    onPressed: null,
+                    icon: IconButton(
+                      onPressed: null,
+                      icon: Icon(
+                        Icons.filter_list,
+                        color: Color(0xB2F83D5B),
+                      ),
+                    ),
+                  )
+                ]),
             const SizedBox(height: 40),
             ViewAll(title: "Transitional Visits"),
             ServiceCard(),

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DocCard extends StatelessWidget {
-  final Map<String, dynamic> data;
   DocCard({
     super.key,
-    required this.data,
   });
 
   @override

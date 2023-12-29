@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/widgets/doc_card.dart';
-import 'package:testavizh/widgets/service_box.dart';
-import 'package:testavizh/widgets/articlebox.dart';
-import 'package:testavizh/widgets/searchbar.dart';
-import 'package:testavizh/widgets/viewAll.dart';
+import 'package:testavizh/widget/doc_card.dart';
+import 'package:testavizh/widget/service_box.dart';
+import 'package:testavizh/widget/articlebox.dart';
+import 'package:testavizh/widget/searchbar.dart';
+import 'package:testavizh/widget/viewAll.dart';
 
-import '../widgets/option_box.dart';
+import '../widget/option_box.dart';
 
 class HomeHealthcarePage extends StatelessWidget {
   @override
@@ -101,7 +101,7 @@ class HomeHealthcarePage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: 20,
                   itemBuilder: (BuildContext context, int index) {
-                    return const Center(
+                    return Center(
                       child: DocCard(),
                     );
                   },

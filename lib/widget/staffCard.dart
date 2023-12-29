@@ -6,7 +6,7 @@ class StaffCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: MediaQuery.of(context).size.height / 7,
+        height: MediaQuery.of(context).size.height / 6,
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
             side: const BorderSide(width: 1, color: Color(0xFFD9D9D9)),
@@ -18,10 +18,11 @@ class StaffCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CircleAvatar(),
+              const CircleAvatar(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(

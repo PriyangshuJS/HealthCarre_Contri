@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/widgets/conformButton.dart';
-import 'package:testavizh/widgets/dropdown.dart';
-import 'package:testavizh/widgets/genderIcon.dart';
+import 'package:testavizh/widget/conformButton.dart';
+import 'package:testavizh/widget/dropdown.dart';
+import 'package:testavizh/widget/genderIcon.dart';
+
+import '1healthhomepage.dart';
 
 class UserDetail extends StatefulWidget {
   const UserDetail({super.key});

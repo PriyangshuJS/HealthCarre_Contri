@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ReviewCard extends StatefulWidget {
-  final Map<String, dynamic> data;
   ReviewCard({
     super.key,
-    required this.data,
   });
 
   @override
@@ -14,8 +12,6 @@ class ReviewCard extends StatefulWidget {
 class _ReviewCardState extends State<ReviewCard> {
   @override
   Widget build(BuildContext context) {
-    String Cname = widget.data["cname"] ?? "User";
-    String comment = widget.data["comment"] ?? "Unknown";
     return Opacity(
       opacity: 0.70,
       child: Container(
@@ -40,7 +36,7 @@ class _ReviewCardState extends State<ReviewCard> {
               contentPadding: EdgeInsets.all(0), // Set contentPadding to 0
               leading: CircleAvatar(),
               title: Text(
-                Cname,
+                "Username",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 14,
@@ -51,7 +47,7 @@ class _ReviewCardState extends State<ReviewCard> {
               ),
 
               subtitle: Text(
-                comment.split(' ').take(5).join(' ') + '...',
+                "Some comment",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 10,

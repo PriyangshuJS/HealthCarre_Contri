@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/widgets/calender.dart';
-import 'package:testavizh/widgets/dropbox.dart';
+import 'package:testavizh/widget/calender.dart';
+import 'package:testavizh/widget/dropbox.dart';
 
 class UserActivity extends StatefulWidget {
   const UserActivity({super.key});

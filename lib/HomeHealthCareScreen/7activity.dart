@@ -1,51 +1,35 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class Activity8 extends StatefulWidget {
-  const Activity8({Key? key}) : super(key: key);
+class Activity extends StatelessWidget {
+  const Activity({Key? key}) : super(key: key);
 
-  @override
-  State<Activity8> createState() => _Activity8State();
-}
-
-class _Activity8State extends State<Activity8> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Activity',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.black.withOpacity(0.800000011920929),
-            fontSize: 24,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w500,
-            height: 0,
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            'Activity',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.black.withOpacity(0.800000011920929),
+              fontSize: 24,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w500,
+              height: 0,
+            ),
           ),
         ),
-      ),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection('activity').snapshots(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-
-          var activities = snapshot.data!.docs;
-
-          return SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(30),
-              child: Column(
-                children: List.generate(
-                  activities.length,
-                  (index) {
-                    var activity = activities[index];
-
-                    return Container(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              children: List.generate(
+                5,
+                (index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height / 6,
                       decoration: ShapeDecoration(
@@ -82,7 +66,7 @@ class _Activity8State extends State<Activity8> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    activity['plan'],
+                                    "Plan",
                                     style: TextStyle(
                                       color: Color(0xFFF83D5B),
                                       fontSize: 16,
@@ -100,7 +84,7 @@ class _Activity8State extends State<Activity8> {
                                       Icon(Icons.calendar_month_outlined,
                                           size: 20),
                                       Text(
-                                        activity['date'],
+                                        "Date",
                                         style: TextStyle(
                                           color: Colors.black
                                               .withOpacity(0.800000011920929),
@@ -119,7 +103,7 @@ class _Activity8State extends State<Activity8> {
                                     children: [
                                       Icon(Icons.alarm, size: 20),
                                       Text(
-                                        activity['time'],
+                                        'time',
                                         style: TextStyle(
                                           color: Colors.black
                                               .withOpacity(0.800000011920929),
@@ -133,7 +117,7 @@ class _Activity8State extends State<Activity8> {
                                   ),
                                   SizedBox(height: 5),
                                   Text(
-                                    'For - ${activity['for']}',
+                                    'for grandpa',
                                     style: TextStyle(
                                       color: Colors.black
                                           .withOpacity(0.800000011920929),
@@ -176,14 +160,12 @@ class _Activity8State extends State<Activity8> {
                           ],
                         ),
                       ),
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ),
-          );
-        },
-      ),
-    );
+          ),
+        ));
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_calendar_week/flutter_calendar_week.dart';
-import 'package:testavizh/widgets/conformButton.dart';
+import 'package:testavizh/widget/conformButton.dart';
 
-import '../widgets/calender.dart';
+import '../widget/calender.dart';
 
 class ScheduleA extends StatefulWidget {
   const ScheduleA({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/widgets/doc_card.dart';
-import 'package:testavizh/widgets/managerCard.dart';
+import 'package:testavizh/widget/doc_card.dart';
+import 'package:testavizh/widget/managerCard.dart';
 
 class UserAccDetail extends StatelessWidget {
   const UserAccDetail({super.key});

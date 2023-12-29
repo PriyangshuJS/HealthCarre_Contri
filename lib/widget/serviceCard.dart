@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ServiceCard extends StatelessWidget {
-  final Map<String, dynamic> data;
-
   ServiceCard({
     Key? key,
-    required this.data,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    String name = data["name"] ?? "User";
-    String details = data["details"] ?? "Unknown";
-    String amount = data["amount"] ?? "Unknown";
-
     return Container(
       height: MediaQuery.of(context).size.height / 6,
       decoration: ShapeDecoration(
@@ -46,10 +39,11 @@ class ServiceCard extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    name,
-                    style: const TextStyle(
+                  const Text(
+                    "Package Name",
+                    style: TextStyle(
                       color: Colors.black,
                       fontSize: 14,
                       fontFamily: 'Poppins',
@@ -57,11 +51,10 @@ class ServiceCard extends StatelessWidget {
                       height: 0,
                     ),
                   ),
-                  // const SizedBox(height: 10),
                   SizedBox(
                     width: MediaQuery.of(context).size.width / 3,
                     child: Text(
-                      details,
+                      "Package Detail",
                       style: TextStyle(
                         color: Colors.black.withOpacity(0.5),
                         fontSize: 10,
@@ -75,9 +68,9 @@ class ServiceCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        amount,
-                        style: const TextStyle(
+                      const Text(
+                        "₹ 500",
+                        style: TextStyle(
                           color: Color(0xFFF83D5B),
                           fontSize: 14,
                           fontFamily: 'Poppins',
@@ -95,9 +88,9 @@ class ServiceCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5),
                           ),
                         ),
-                        child: const SizedBox(
-                          width: 84,
-                          child: Center(
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width / 10,
+                          child: const Center(
                             child: Text(
                               'Book now',
                               textAlign: TextAlign.center,

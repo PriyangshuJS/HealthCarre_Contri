@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/widgets/conformButton.dart';
-import 'package:testavizh/widgets/option_box.dart';
+import 'package:testavizh/widget/conformButton.dart';
+import 'package:testavizh/widget/option_box.dart';
+import 'package:testavizh/widget/reviewCard.dart';
 
 class GeneralCare extends StatelessWidget {
   const GeneralCare({Key? key}) : super(key: key);
@@ -14,10 +15,10 @@ class GeneralCare extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height / 10),
+            SizedBox(height: MediaQuery.of(context).size.height / 15),
             Container(
-              width: MediaQuery.of(context).size.width * 4.5 / 5,
-              height: MediaQuery.of(context).size.height / 4,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height / 5,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
                 color: Colors.white,
@@ -118,46 +119,10 @@ class GeneralCare extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Opacity(
-              opacity: 0.7,
-              child: Container(
-                width: 354,
-                height: 107,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF6F6F6),
-                  borderRadius: BorderRadius.circular(5),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0x19000000),
-                      blurRadius: 4,
-                      offset: Offset(2, 2),
-                      spreadRadius: 0,
-                    )
-                  ],
-                ),
-              ),
-            ),
+            ReviewCard(),
             const SizedBox(height: 10),
-            Opacity(
-              opacity: 0.7,
-              child: Container(
-                width: 354,
-                height: 107,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF6F6F6),
-                  borderRadius: BorderRadius.circular(5),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0x19000000),
-                      blurRadius: 4,
-                      offset: Offset(2, 2),
-                      spreadRadius: 0,
-                    )
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
+            ReviewCard(),
+            const SizedBox(height: 15),
             const Text(
               'View All',
               textAlign: TextAlign.center,
@@ -174,9 +139,11 @@ class GeneralCare extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _buildButton("Button 1", () => print("Button 1 clicked")),
+                _buildButton("FAQs", () => print("Button 1 clicked"),
+                    Icons.question_mark),
                 SizedBox(width: MediaQuery.of(context).size.width / 4),
-                _buildButton("Button 2", () => print("Button 2 clicked")),
+                _buildButton("Chat with us", () => print("Button 2 clicked"),
+                    Icons.comment),
               ],
             ),
             const SizedBox(height: 20),
@@ -188,7 +155,7 @@ class GeneralCare extends StatelessWidget {
     );
   }
 
-  Widget _buildButton(String label, VoidCallback onPressed) {
+  Widget _buildButton(String label, VoidCallback onPressed, IconData iconData) {
     return InkWell(
       onTap: onPressed,
       child: Column(
@@ -199,6 +166,10 @@ class GeneralCare extends StatelessWidget {
             decoration: const BoxDecoration(
               color: Color(0xFFF83D5B),
               shape: BoxShape.circle,
+            ),
+            child: Icon(
+              iconData,
+              color: Colors.white,
             ),
           ),
           const SizedBox(height: 8),

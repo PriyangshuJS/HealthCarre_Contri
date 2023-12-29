@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/widgets/conformButton.dart';
-import 'package:testavizh/widgets/option_box.dart';
+import 'package:testavizh/widget/conformButton.dart';
+import 'package:testavizh/widget/option_box.dart';
 
-import '../widgets/paymentCard.dart';
+import '../widget/paymentCard.dart';
 
 class Payment extends StatelessWidget {
   const Payment({super.key});
@@ -11,6 +11,7 @@ class Payment extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           'Payment',
           textAlign: TextAlign.center,

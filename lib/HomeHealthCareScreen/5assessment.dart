@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:testavizh/widgets/genderIcon.dart';
-import 'package:testavizh/widgets/option_box.dart';
+import 'package:testavizh/widget/genderIcon.dart';
+import 'package:testavizh/widget/option_box.dart';
 
-import '../widgets/conformButton.dart';
+import '../widget/conformButton.dart';
 
 class Assessment extends StatelessWidget {
   const Assessment({super.key});
@@ -216,8 +216,8 @@ class Assessment extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Container(
-                width: 354,
-                height: 63,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 7,
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
                     side: const BorderSide(width: 1, color: Color(0xFFD9D9D9)),
@@ -258,6 +258,7 @@ class Assessment extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
+                    width: MediaQuery.of(context).size.width / 3,
                     decoration: ShapeDecoration(
                       shape: RoundedRectangleBorder(
                         side: const BorderSide(
@@ -268,6 +269,7 @@ class Assessment extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(10),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
                             'Start date',
@@ -286,6 +288,7 @@ class Assessment extends StatelessWidget {
                   ),
                   const SizedBox(width: 20),
                   Container(
+                    width: MediaQuery.of(context).size.width / 3,
                     decoration: ShapeDecoration(
                       shape: RoundedRectangleBorder(
                         side: const BorderSide(
@@ -296,6 +299,7 @@ class Assessment extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(10),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
                             'End date',
